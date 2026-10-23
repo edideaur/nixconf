@@ -6,13 +6,7 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      vaapiVulkan
-      vaapi-intel-hybrid
       libvdpau-va-gl
-      amdvlk
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      amdvlk
     ];
   };
 
