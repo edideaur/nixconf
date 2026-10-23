@@ -7,7 +7,7 @@
       diskSize = 30720;  # 30 GB virtual disk
       graphics = true;
       qemu.options = [
-        "-device" "virtio-vga"
+        "-device" "virtio-vga,xres=1920,yres=1080"
         "-display" "gtk"
       ];
       sharedDirectories = {
