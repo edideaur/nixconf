@@ -40,6 +40,12 @@
   security.pam.services.greetd.enableGnomeKeyring = true;
   security.pam.services.hyprlock.fprintAuth = true;
 
+  # Enable Hyprland compositor at system level (sets up wrappers, portals, polkit & PAM)
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # Greetd + tuigreet
   services.greetd = {
     enable = true;
