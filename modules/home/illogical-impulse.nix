@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   imports = [
     inputs.illogical-flake.homeManagerModules.default
@@ -8,9 +8,9 @@
     enable = true;
 
     dotfiles = {
-      fish.enable = false;    # Handled by our dedicated shell.nix
-      kitty.enable = false;   # Handled by our dedicated terminal.nix
-      starship.enable = false;# Handled by our dedicated shell.nix
+      fish.enable = lib.mkForce true;
+      kitty.enable = lib.mkForce true;
+      starship.enable = lib.mkForce true;
     };
   };
 }
