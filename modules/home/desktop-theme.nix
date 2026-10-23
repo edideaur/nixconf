@@ -76,5 +76,5 @@
   # Seed your customized illogical-impulse config.json
   # (Vertical left bar, monochrome palette, drumkits_bg wallpaper, custom toggles, AI settings)
   home.file.".config/illogical-impulse/config.json".source =
-    /home/edideaur/.config/illogical-impulse/config.json;
+    ../../assets/config/config.json;
 }
