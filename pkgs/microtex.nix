@@ -5,7 +5,7 @@
   cmake,
   pkg-config,
   cairo,
-  gtksourceview4,
+  gtksourceview3,
   pango,
   fontconfig,
   tinyxml-2,
@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     cairo
-    gtksourceview4
+    gtksourceview3
     pango
     fontconfig
     tinyxml-2
