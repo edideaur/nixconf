@@ -39,8 +39,8 @@
       package = pkgs.adw-gtk3;
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "OneUI-dark";
+      package = null; # handled by illogical-impulse dotfiles module
     };
     font = {
       name = "Rubik";
@@ -84,4 +84,12 @@
     ../../assets/state-quickshell/states.json;
   home.file.".local/state/quickshell/user".source =
     ../../assets/state-quickshell/user;
+
+  # Ensure icon name compatibility symlinks for pavucontrol and other apps
+  xdg.dataFile."icons/hicolor/48x48/apps/pavucontrol.svg".source =
+    "${pkgs.papirus-icon-theme}/share/icons/Papirus/48x48/apps/org.pulseaudio.pavucontrol.svg";
+  xdg.dataFile."icons/hicolor/48x48/apps/org.pulseaudio.pavucontrol.svg".source =
+    "${pkgs.papirus-icon-theme}/share/icons/Papirus/48x48/apps/org.pulseaudio.pavucontrol.svg";
+  xdg.dataFile."icons/hicolor/48x48/apps/multimedia-volume-control.svg".source =
+    "${pkgs.papirus-icon-theme}/share/icons/Papirus/48x48/apps/multimedia-volume-control.svg";
 }

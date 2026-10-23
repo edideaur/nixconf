@@ -192,5 +192,11 @@ in
           hl.exec_cmd("${monitorListenerScript}")
       end)
     '';
+
+    # Custom variables override
+    ".config/hypr/custom/variables.lua".text = ''
+      browser = "helium"
+      volumeMixer = "pavucontrol"
+    '';
   };
 }

@@ -32,6 +32,7 @@
     playerctl
     easyeffects
     pavucontrol
+    lxqt.pavucontrol-qt
 
     # Communication & Social
     equibop # Custom Discord desktop app with Equicord
