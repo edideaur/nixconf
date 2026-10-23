@@ -114,6 +114,7 @@
       gnome-icon-theme = final.adwaita-icon-theme;
       fast-rm = final.callPackage ../../pkgs/fast-rm.nix { };
       microtex = final.callPackage ../../pkgs/microtex.nix { };
+      helium = (final.callPackage ../../pkgs/helium-browser.nix { });
     })
   ];
 

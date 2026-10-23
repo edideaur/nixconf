@@ -20,7 +20,7 @@
     cloudflared
 
     # Web & Internet
-    helium-browser
+    helium
     mullvad-browser
     qbittorrent-nox
 
