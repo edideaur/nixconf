@@ -45,6 +45,16 @@ stdenv.mkDerivation rec {
     gtksourceviewmm
   ];
 
+  installPhase = ''
+    runHook preInstall
+    mkdir -p $out/bin $out/lib $out/include/microtex $out/share/microtex
+    cp -r res $out/share/microtex/
+    cp LaTeX $out/bin/microtex
+    cp libLaTeX.a $out/lib/
+    cp -r ../src/*.h $out/include/microtex/ 2>/dev/null || true
+    runHook postInstall
+  '';
+
   meta = with lib; {
     description = "A dynamic, cross-platform, and embeddable LaTeX rendering library";
     homepage = "https://github.com/NanoMichael/MicroTeX";
