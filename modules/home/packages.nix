@@ -47,7 +47,7 @@
     rust-analyzer
     nil # Nix language server
     nixd
-    nixfmt-rfc-style
+    nixfmt
     bun
     nodejs_22
     pnpm
