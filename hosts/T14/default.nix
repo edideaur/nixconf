@@ -107,8 +107,13 @@
     fast-rm
   ];
 
-  # Allow unfree packages globally
+  # Allow unfree packages globally and provide backward-compatible overlay for deprecated icon themes
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+    (final: prev: {
+      gnome-icon-theme = final.adwaita-icon-theme;
+    })
+  ];
 
   # Nix Package Manager settings & Substituters (Caches)
   nix = {

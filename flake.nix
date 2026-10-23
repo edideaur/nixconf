@@ -61,6 +61,7 @@
         (final: prev: {
           fast-rm = final.callPackage ./pkgs/fast-rm.nix { };
           microtex = final.callPackage ./pkgs/microtex.nix { };
+          gnome-icon-theme = final.adwaita-icon-theme;
         })
       ];
     };
