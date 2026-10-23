@@ -107,6 +107,9 @@
     fast-rm
   ];
 
+  # Allow unfree packages globally
+  nixpkgs.config.allowUnfree = true;
+
   # Nix Package Manager settings & Substituters (Caches)
   nix = {
     settings = {
