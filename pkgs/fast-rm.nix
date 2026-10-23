@@ -15,10 +15,7 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-k0kUfD7n4q7Puh1R5ZfV5O2K6tD1Z4n2jY4v2g4f8q0=";
   };
 
-  cargoLock = {
-    lockFile = null;
-    outputHashes = { };
-  };
+  cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
 
   doCheck = false;
 
