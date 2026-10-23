@@ -9,7 +9,7 @@ echo "==> Ensuring Git tracks all configuration files..."
 git add -A
 
 echo "==> Building NixOS QEMU VM..."
-nix build .#nixosConfigurations.T14.config.system.build.vm
+nix --extra-experimental-features "nix-command flakes" build .#nixosConfigurations.T14.config.system.build.vm
 
 echo "==> Launching NixOS VM with 3D VirtIO acceleration and shared folder..."
 QEMU_OPTS="-device virtio-vga-gl -display gtk,gl=on -audio driver=pa,model=virtio" \
