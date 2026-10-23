@@ -21,5 +21,9 @@
 
     # Automatically adapt Disko drive inside VM
     disko.devices.disk.main.device = lib.mkVMOverride "/dev/vda";
+
+    # In VM mode, use standard upstream kernel to avoid long local kernel compilations
+    boot.kernelPackages = lib.mkVMOverride pkgs.linuxPackages_latest;
+    boot.zfs.package = lib.mkVMOverride pkgs.zfs_latest;
   };
 }
