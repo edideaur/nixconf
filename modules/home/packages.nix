@@ -37,9 +37,13 @@
     equibop # Custom Discord desktop app with Equicord
 
     # Gaming & Java
-    prismlauncher
-    temurin-bin-21
-    temurin-bin-17
+    (prismlauncher.override {
+      jdks = [
+        temurin-bin-21
+        temurin-bin-17
+        temurin-bin-8
+      ];
+    })
 
     # Development Stack
     zed-editor
