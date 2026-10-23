@@ -8,6 +8,7 @@
   gtksourceview4,
   pango,
   fontconfig,
+  tinyxml-2,
 }:
 
 stdenv.mkDerivation rec {
@@ -31,6 +32,7 @@ stdenv.mkDerivation rec {
     gtksourceview4
     pango
     fontconfig
+    tinyxml-2
   ];
 
   meta = with lib; {
