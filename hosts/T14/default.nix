@@ -115,6 +115,7 @@
       fast-rm = final.callPackage ../../pkgs/fast-rm.nix { };
       microtex = final.callPackage ../../pkgs/microtex.nix { };
       helium = (final.callPackage ../../pkgs/helium-browser.nix { });
+      spotify-spotx = final.spotify;
     })
   ];
 
