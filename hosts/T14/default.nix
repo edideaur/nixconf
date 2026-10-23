@@ -50,7 +50,6 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.ubuntu
       rubik
-      google-fonts
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
