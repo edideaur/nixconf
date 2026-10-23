@@ -10,23 +10,11 @@
         "-device" "virtio-vga"
         "-display" "gtk"
       ];
-      forwardPorts = [
-        { from = "host"; host.port = 2222; guest.port = 22; }
-      ];
       sharedDirectories = {
         nix-config = {
           source = "/home/edideaur/Documents/nix";
           target = "/shared";
         };
-      };
-    };
-
-    # Enable SSH inside VM for headless/terminal access from host
-    services.openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "yes";
-        PasswordAuthentication = true;
       };
     };
 
