@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   # ZFS maintenance services
+  boot.zfs.forceImportRoot = false;
   services.zfs = {
     autoScrub = {
       enable = true;
