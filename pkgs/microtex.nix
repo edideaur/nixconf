@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     owner = "NanoMichael";
     repo = "MicroTeX";
     rev = "0e3707f6dafebb121d98b53c64364d16fefe481d";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-U6zqh+VqoLtlE0IwgfwjY9zt8e5/2R3cqf5fWXwoIi0=";
   };
 
   nativeBuildInputs = [
