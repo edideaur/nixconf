@@ -24,6 +24,12 @@ stdenv.mkDerivation rec {
     hash = "sha256-U6zqh+VqoLtlE0IwgfwjY9zt8e5/2R3cqf5fWXwoIi0=";
   };
 
+  postPatch = ''
+    substituteInPlace src/platform/cairo/graphic_cairo.cpp \
+      --replace-fail '#include <fontconfig/fontconfig.h>' '#include <fontconfig/fontconfig.h>
+#include <fontconfig/fcfreetype.h>'
+  '';
+
   nativeBuildInputs = [
     cmake
     pkg-config
