@@ -48,7 +48,6 @@
     # Development Stack
     zed-editor
     rustup
-    rust-analyzer
     nil # Nix language server
     nixd
     nixfmt
