@@ -12,7 +12,7 @@ rustPlatform.buildRustPackage rec {
     owner = "tekacs";
     repo = "fast-rm";
     rev = "d605af0e68039effc3d5e86fe642eaa0f240e974";
-    hash = "sha256-k0kUfD7n4q7Puh1R5ZfV5O2K6tD1Z4n2jY4v2g4f8q0=";
+    hash = "sha256-0p+rTeyg4CVBanLIxdTgJ+SO6A588ItZxjybaD1DvuE=";
   };
 
   cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
