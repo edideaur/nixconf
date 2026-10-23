@@ -54,7 +54,6 @@
     bun
     nodejs_22
     pnpm
-    (python3.withPackages (ps: with ps; [ pip ]))
     gcc
     gnumake
     cmake
