@@ -78,4 +78,10 @@
   # (Vertical left bar, monochrome palette, drumkits_bg wallpaper, custom toggles, AI settings)
   home.file.".config/illogical-impulse/config.json".source =
     ../../assets/config/config.json;
+
+  # Seed your current QuickShell generated color schemes and state
+  home.file.".local/state/quickshell/states.json".source =
+    ../../assets/state-quickshell/states.json;
+  home.file.".local/state/quickshell/user".source =
+    ../../assets/state-quickshell/user;
 }
