@@ -10,6 +10,7 @@
   fontconfig,
   tinyxml-2,
   gtkmm3,
+  gtksourceviewmm,
 }:
 
 stdenv.mkDerivation rec {
@@ -35,6 +36,7 @@ stdenv.mkDerivation rec {
     fontconfig
     tinyxml-2
     gtkmm3
+    gtksourceviewmm
   ];
 
   meta = with lib; {
