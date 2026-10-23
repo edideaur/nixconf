@@ -9,6 +9,7 @@
   pango,
   fontconfig,
   tinyxml-2,
+  gtkmm3,
 }:
 
 stdenv.mkDerivation rec {
@@ -33,6 +34,7 @@ stdenv.mkDerivation rec {
     pango
     fontconfig
     tinyxml-2
+    gtkmm3
   ];
 
   meta = with lib; {
