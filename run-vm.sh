@@ -16,6 +16,5 @@ nix --extra-experimental-features "nix-command flakes" \
     --option ssl-cert-file /etc/ssl/certs/ca-certificates.crt \
     build .#nixosConfigurations.T14.config.system.build.vm
 
-echo "==> Launching NixOS VM with 3D VirtIO acceleration and shared folder..."
-QEMU_OPTS="-device virtio-vga-gl -display gtk,gl=on -audio driver=pa,model=virtio" \
+echo "==> Launching NixOS VM..."
 ./result/bin/run-T14-vm
