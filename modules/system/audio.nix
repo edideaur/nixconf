@@ -40,7 +40,4 @@
       };
     };
   };
-
-  # Zero pop/click sound configuration
-  sound.enable = false; # Handled by PipeWire
 }

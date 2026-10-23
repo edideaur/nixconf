@@ -27,10 +27,12 @@
   };
 
   # Systemd Journal limits (prevent SSD log bloat)
-  services.journald.extraConfig = ''
-    SystemMaxUse=500M
-    RuntimeMaxUse=100M
-  '';
+  services.journald.settings = {
+    Journal = {
+      SystemMaxUse = "500M";
+      RuntimeMaxUse = "100M";
+    };
+  };
 
   # GNOME Keyring daemon with PAM auto-unlock
   services.gnome.gnome-keyring.enable = true;

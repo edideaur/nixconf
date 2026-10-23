@@ -21,21 +21,24 @@
     enable = true;
     dnssec = "allow-downgrade";
     dnsovertls = "true";
-    extraConfig = ''
-      [Resolve]
-      DNS=45.90.28.0#2a7252.dns.nextdns.io
-      DNS=2a07:a8c0::#2a7252.dns.nextdns.io
-      DNS=45.90.30.0#2a7252.dns.nextdns.io
-      DNS=2a07:a8c1::#2a7251.dns.nextdns.io
-      DNSOverTLS=yes
-      Cache=yes
-    '';
+    settings = {
+      Resolve = {
+        DNS = [
+          "45.90.28.0#2a7252.dns.nextdns.io"
+          "2a07:a8c0::#2a7252.dns.nextdns.io"
+          "45.90.30.0#2a7252.dns.nextdns.io"
+          "2a07:a8c1::#2a7251.dns.nextdns.io"
+        ];
+        DNSOverTLS = "yes";
+        Cache = "yes";
+      };
+    };
   };
 
   # Mullvad VPN daemon
   services.mullvad-vpn = {
     enable = true;
-    package = pkgs.mullvad-vpn;
+    enableExcludeWrapper = false;
   };
 
   # Cloudflare Warp daemon
