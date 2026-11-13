@@ -1,4 +1,4 @@
-{ ... }:
+{ personal, ... }:
 {
   imports = [
     ./packages.nix
@@ -10,8 +10,8 @@
   ];
 
   home = {
-    username = "edideaur";
-    homeDirectory = "/home/edideaur";
+    username = personal.username;
+    homeDirectory = personal.homeDirectory;
     stateVersion = "25.05";
   };
 

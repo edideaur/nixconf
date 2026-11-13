@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, personal, ... }:
 {
   programs.fish = {
     enable = true;
@@ -23,10 +23,10 @@
       alias ll 'eza -la --icons=auto'
 
       # Nix shortcuts
-      alias nrs 'sudo nixos-rebuild switch --flake /home/edideaur/Documents/nix#T14'
-      alias nrb 'nixos-rebuild build-vm --flake /home/edideaur/Documents/nix#T14'
-      alias nrt 'sudo nixos-rebuild test --flake /home/edideaur/Documents/nix#T14'
-      alias nru 'nix flake update --flake /home/edideaur/Documents/nix'
+      alias nrs 'sudo nixos-rebuild switch --flake ${personal.repoPath}#T14'
+      alias nrb 'nixos-rebuild build-vm --flake ${personal.repoPath}#T14'
+      alias nrt 'sudo nixos-rebuild test --flake ${personal.repoPath}#T14'
+      alias nru 'nix flake update --flake ${personal.repoPath}'
       alias ncg 'nix-collect-garbage -d && sudo nix-collect-garbage -d'
 
       # Fast qBittorrent-nox CLI alias

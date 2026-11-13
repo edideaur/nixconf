@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, personal, ... }:
 {
   imports = [
     ./disko.nix
@@ -12,19 +12,9 @@
   ];
 
   # Time & Localization
-  time.timeZone = "Europe/Bucharest";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_NUMERIC = "ro_RO.UTF-8";
-    LC_TIME = "ro_RO.UTF-8";
-    LC_MONETARY = "ro_RO.UTF-8";
-    LC_PAPER = "ro_RO.UTF-8";
-    LC_NAME = "ro_RO.UTF-8";
-    LC_ADDRESS = "ro_RO.UTF-8";
-    LC_TELEPHONE = "ro_RO.UTF-8";
-    LC_MEASUREMENT = "ro_RO.UTF-8";
-    LC_IDENTIFICATION = "ro_RO.UTF-8";
-  };
+  time.timeZone = personal.timeZone;
+  i18n.defaultLocale = personal.locale;
+  i18n.extraLocaleSettings = personal.extraLocales;
 
   # Console keymap
   console.keyMap = "us";
@@ -59,9 +49,9 @@
   };
 
   # System User configuration
-  users.users.edideaur = {
+  users.users.${personal.username} = {
     isNormalUser = true;
-    description = "edideaur";
+    description = personal.description;
     extraGroups = [
       "wheel"
       "audio"
@@ -135,7 +125,7 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "quickshell.cachix.org-1:Ak72y0Ocu2PD5WScFBPmNxIoasVoVoIViKGpmsOWFw4="
       ];
-      trusted-users = [ "root" "edideaur" ];
+      trusted-users = [ "root" personal.username ];
     };
     gc = {
       automatic = true;

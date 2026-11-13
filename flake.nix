@@ -52,6 +52,7 @@
   }:
   let
     system = "x86_64-linux";
+    personal = import ./personal.nix;
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
@@ -69,7 +70,7 @@
   {
     nixosConfigurations.T14 = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs personal; };
       modules = [
         disko.nixosModules.disko
         chaotic.nixosModules.default
@@ -79,8 +80,8 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
-            users.edideaur = import ./modules/home;
+            extraSpecialArgs = { inherit inputs personal; };
+            users.${personal.username} = import ./modules/home;
           };
         }
       ];

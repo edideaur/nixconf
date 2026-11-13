@@ -76,6 +76,8 @@ nix build .#nixosConfigurations.T14.config.system.build.vm
 ./result/bin/run-T14-vm
 ```
 
+**Windows (WSL2):** run `run-vm-windows.cmd` (or `run-vm-windows.ps1`). Requires WSL2 with Nix installed; the script delegates to `run-vm.sh` inside WSL.
+
 * **Default Login**: User `edideaur` with initial password `nixos`.
 * **Shared Directory**: Your host directory `/home/edideaur/Documents/nix` is accessible inside the VM at `/shared`.
 
@@ -111,3 +113,17 @@ nix build .#nixosConfigurations.T14.config.system.build.vm
 * `nru`: Update flake inputs (`nix flake update`)
 * `ncg`: Clean up old generations (`nix-collect-garbage -d && sudo nix-collect-garbage -d`)
 * `q`: Shorthand for QuickShell IPC (`qs -c ii`)
+
+---
+
+## 🍴 Adapting / Forking
+
+This is a personal configuration. To use it on your own machine, edit the single file
+[`personal.nix`](./personal.nix) (username, paths, timezone, locale) and update the
+host-specific bits (disk device, monitor names, fingerprint reader, etc.) under
+`hosts/` and `modules/`. Then rebuild with `nrs`.
+
+## 📄 License
+
+Released into the public domain under the [Unlicense](./UNLICENSE).
+Contact: edi@edideaur.works

@@ -1,3 +1,6 @@
 result
 result-*
 *.qcow2
+
+# Personal runtime state (QuickShell) - not meant to be published
+assets/state-quickshell/

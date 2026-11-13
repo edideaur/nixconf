@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, personal, ... }:
 {
   virtualisation.vmVariant = {
     virtualisation = {
@@ -12,7 +12,7 @@
       ];
       sharedDirectories = {
         nix-config = {
-          source = "/home/edideaur/Documents/nix";
+          source = personal.repoPath;
           target = "/shared";
         };
       };

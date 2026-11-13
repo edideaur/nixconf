@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, personal, ... }:
 {
   # Chromium / Helium Ozone Wayland flags
   home.file.".config/chrome-flags.conf".text = ''
@@ -76,14 +76,12 @@
 
   # Seed your customized illogical-impulse config.json
   # (Vertical left bar, monochrome palette, drumkits_bg wallpaper, custom toggles, AI settings)
-  home.file.".config/illogical-impulse/config.json".source =
-    ../../assets/config/config.json;
+  # Personal paths in the template are substituted from personal.nix.
+  home.file.".config/illogical-impulse/config.json".text =
+    builtins.replaceStrings [ "/home/edideaur" ] [ personal.homeDirectory ]
+      (builtins.readFile ../../assets/config/config.json);
 
-  # Seed your current QuickShell generated color schemes and state
-  home.file.".local/state/quickshell/states.json".source =
-    ../../assets/state-quickshell/states.json;
-  home.file.".local/state/quickshell/user".source =
-    ../../assets/state-quickshell/user;
+  # QuickShell state is intentionally not seeded; it regenerates at runtime.
 
   # Ensure icon name compatibility symlinks for pavucontrol and other apps
   xdg.dataFile."icons/hicolor/48x48/apps/pavucontrol.svg".source =
